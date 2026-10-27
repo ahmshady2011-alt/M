@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>كل سنة وانت طيب يا أحلى أب</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #1f4068, #162447, #1a1a2e);
+            font-family: 'Cairo', Tahoma, sans-serif;
+            color: #ffffff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+            text-align: center;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            padding: 40px 30px;
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.5);
+            z-index: 10;
+            max-width: 500px;
+            width: 90%;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        h1 {
+            font-size: 2.2rem;
+            color: #ff6b6b;
+            margin-bottom: 10px;
+            text-shadow: 0 2px 10px rgba(255, 107, 107, 0.4);
+        }
+
+        h2 {
+            font-size: 1.8rem;
+            color: #ffd166;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 1.2rem;
+            color: #e2e8f0;
+            margin-top: 25px;
+            font-weight: bold;
+        }
+
+        .heart {
+            color: #ff4757;
+            font-size: 2rem;
+            animation: pulse 1s infinite alternate;
+            display: inline-block;
+            margin-top: 15px;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            100% { transform: scale(1.25); }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* تنسيق البلالين والقلوب العائمة في الخلفية */
+        .balloon {
+            position: absolute;
+            bottom: -150px;
+            width: 40px;
+            height: 50px;
+            border-radius: 50% 50% 50% 50% / 40% 40% 60% 60%;
+            animation: flyUp 6s infinite ease-in;
+            z-index: 1;
+            opacity: 0.8;
+        }
+
+        @keyframes flyUp {
+            0% {
+                bottom: -150px;
+                transform: translateX(0);
+            }
+            50% {
+                transform: translateX(30px);
+            }
+            100% {
+                bottom: 105vh;
+                transform: translateX(-30px);
+            }
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="card">
+        <h1>🎉 كل سنة وانت طيب 🎉</h1>
+        <h2>يا أحلى أب في الدنيا<br><span style="color: #fff; font-size: 1.5rem;">Shady Abdelmaksoud</span></h2>
+        <p>ربنا يخليك لينا وما يحرمناش منك أبداً يا غالي ❤️</p>
+        <div class="heart">❤️</div>
+        <p style="font-size: 1rem; color: #a0aec0; margin-top: 15px;">From: Mo Shady</p>
+    </div>
+
+    <!-- تأثير البلالين والقلوب العائمة -->
+    <script>
+        function createFloatingElements() {
+            const colors = ['#ff6b6b', '#ffd166', '#48dbfb', '#ff9ff3', '#54a0ff'];
+            const elements = ['🎈', '❤️', '💖', '✨'];
+            
+            const el = document.createElement('div');
+            el.innerHTML = elements[Math.floor(Math.random() * elements.length)];
+            el.style.position = 'absolute';
+            el.style.left = Math.random() * 100 + 'vw';
+            el.style.bottom = '-50px';
+            el.style.fontSize = (Math.random() * 20 + 20) + 'px';
+            el.style.animation = `flyUp ${Math.random() * 3 + 4}s linear infinite`;
+            el.style.zIndex = '1';
+            
+            document.body.appendChild(el);
+
+            setTimeout(() => {
+                el.remove();
+            }, 7000);
+        }
+
+        setInterval(createFloatingElements, 400);
+    </script>
+</body>
+</html>
